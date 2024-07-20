@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    </head>
+    <body>
+        <ol id="list" > </ol>
+        <input id="new_item">
+        <button onclick="addItem()"> Add Item </button>
+        <script type="text/javascript">
+            var addItem = function(){
+                // get item text from input
+                var inputValue = document.getElementById("new_item").value; 
+
+                // create new li with item text in it
+                // Select the <ol> element by its id
+                var ol = document.getElementById("list");
+
+                // Create a new <li> element
+                var li = document.createElement("li");
+
+                // Set the text content of the <li>
+                li.textContent = inputValue;
+
+                // Append the <li> to the <ol>
+                ol.appendChild(li);
+
+
+
+                // Create a new <li> element
+                var icon = document.createElement("i");
+
+                icon.classList.add("lni", "lni-trash-can");
+                icon.onclick = trashItem
+
+                // Append the <i> to the <ol>
+                li.appendChild(icon);
+            }
+            
+            //get rid of the element of the list        
+            var trashItem = function(){
+
+                var li = this.parentNode;
+
+                // Remove the parent element from its parent
+                li.parentNode.removeChild(li);
+
+
+            }
+        </script>
+    </body>
+</html> 
