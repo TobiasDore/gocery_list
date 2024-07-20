@@ -4,7 +4,7 @@
     </head>
     <body>
         <ol id="list" > </ol>
-        <input id="new_item">
+        <input id="new_item"  onkeypress="handleKeyPress(event)">
         <button onclick="addItem()"> Add Item </button>
         <script type="text/javascript">
             var addItem = function(){
@@ -44,6 +44,16 @@
 
             }
             
+            function handleKeyPress(event) {
+                // Check if the "Enter" key is pressed
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    // Call your JavaScript function here
+                    addItem();
+                }
+            }
+
+
+
             //get rid of the element of the list        
             var trashItem = function(){
 
